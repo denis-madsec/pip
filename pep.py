@@ -1,3 +1,5 @@
+#old version before splitting into files and changing the way the program works
+
 import sys
 import re
 import os
@@ -7,6 +9,8 @@ PEP_HTML_FILE = os.path.join(DATA_DIR, 'pep.html')
 PEP_PARSED_FILE = os.path.join(DATA_DIR, 'pep.txt')
 PEP_WEBPAGE = 'https://www.python.org/dev/peps/'
 PEP_REGEXP = r'href=.+>(\w+)</a></td>\n<td>(.*)</td>'
+
+
 
 def get_data_from_file(path):
     if os.path.isfile(path):
