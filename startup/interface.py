@@ -11,6 +11,7 @@ except ImportError:
 from bs4 import BeautifulSoup, SoupStrainer
 
 from startup.get.interface import get_data_or_error
+from startup.get.methods.to_file import write_to_parsed_file
 
 def get_parsed_list():
     data, persistent = get_data_or_error()
@@ -38,13 +39,6 @@ def get_parsed_list():
         #        parsed_file.write('%s %s\n' % (num, title))
         #        parsed_file.write('{} {}\n'.format(num, title))
         return matches
-
-
-def write_to_parsed_file(data):
-    with open(config.PEP_PARSED_FILE, 'w') as parsed_file:
-    #with open('/home/denis/projects/test/data/pep.txt', 'w') as parsed_file:
-        for num, title in data:
-            parsed_file.write('{} {}\n'.format(num, title))
 
 #<tr><td>P</td>
 #<td class="num"><a class="reference external" href="/dev/peps/pep-0001">1</a></td>
