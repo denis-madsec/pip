@@ -6,6 +6,8 @@ sys.path.insert(0, PROJ_DIR)
 
 from startup.interface import get_parsed_list
 from action.finder import find_pep_by_name
+from action.from_db import search_db
+from action.to_db import update_db
 
 def get_user_input(args):
     if args:
@@ -18,7 +20,7 @@ def main():
 
     args = sys.argv[1:]
     if not args:
-        print("usage: [--fromweb pep] or [--fromfile pep] or [--fromdb pep] or [--update]")
+        print("usage: [--fromweb pep] or [--fromdb pep] or [--update]")
         sys.exit(1)
     if args[0] == "--fromweb":
         parsed_list = get_parsed_list()
@@ -26,11 +28,9 @@ def main():
         find_pep_by_name(partial_name, parsed_list)
     elif args[0] == '--fromdb':
         partial_name = get_user_input(args[1:])
-        
-        True
+        search_db(partial_name)
     elif args[0] == '--update':
-        #update the db and text file
-        True
+        update_db()
     else:
         print("incorrect usage!")
         sys.exit(1)

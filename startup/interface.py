@@ -40,11 +40,7 @@ def get_parsed_list():
         #        parsed_file.write('{} {}\n'.format(num, title))
         return matches
 
-#<tr><td>P</td>
-#<td class="num"><a class="reference external" href="/dev/peps/pep-0001">1</a></td>
-#<td>PEP Purpose and Guidelines</td>
-#<td>Warsaw, Hylton, Goodger, Coghlan</td>
-#</tr>
+
 
 if __name__ == '__main__':
     print(get_parsed_list())
