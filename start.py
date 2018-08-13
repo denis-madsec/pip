@@ -6,8 +6,8 @@ sys.path.insert(0, PROJ_DIR)
 
 from startup.interface import get_parsed_list
 from action.finder import find_pep_by_name
-from action.from_db import search_db
-from action.to_db import update_db
+from action.db_interface import search_db, update_db
+
 
 def get_user_input(args):
     if args:
