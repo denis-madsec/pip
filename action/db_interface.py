@@ -13,8 +13,9 @@ def db_decorator(function):
     def wrapper(*args, **kwargs):
         client = MongoClient()
         db = client.python
-        function(db, *args, **kwargs)
+        ret = function(db, *args, **kwargs)
         db.client.close()
+        return ret
     return wrapper
 
 

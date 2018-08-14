@@ -36,11 +36,5 @@ def main():
         sys.exit(1)
 
 
-    #partial_name = get_user_input(args)
-
-    #parsed_list = get_parsed_list()
-
-    #find_pep_by_name(partial_name, parsed_list)
-
 if __name__ == '__main__':
     main()
